@@ -1,0 +1,6 @@
+version: 0.0
+os: linux
+files:
+  - source: /target/03-spring-boot-web-application-h2-0.0.1-SNAPSHOT.war
+    destination: /opt/tomcat/webapps/
+

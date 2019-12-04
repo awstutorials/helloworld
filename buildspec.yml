@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+    - apt-get update
+    - apt-get -y install libaio1
+  build:
+    commands:
+    - cd 03-spring-boot-web-application-h2
+    - mvn clean install
+  post_build:
+    commands:
+artifacts:
+  files:
+  - 03-spring-boot-web-application-h2-0.0.1-SNAPSHOT.war

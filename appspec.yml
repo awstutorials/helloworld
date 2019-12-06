@@ -3,4 +3,16 @@ os: linux
 files:
   - source: /target/03-spring-boot-web-application-h2-0.0.1-SNAPSHOT.war
     destination: /opt/tomcat/webapps/
-
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_application
+      timeout: 300
+  BeforeInstall:
+    - location: scripts/install_dependencies
+      timeout: 300
+  ApplicationStart:
+    - location: scripts/write_codedeploy_config.sh
+    - location: scripts/start_application
+      timeout: 300
+  ValidateService:
+    - location: scripts/basic_health_check.sh

@@ -32,4 +32,4 @@ steps:
     # Using the mapped env var:
     Write-Host "This works: $env:MY_MAPPED_ENV_VAR"    # Recommended
   env:
-    MY_MAPPED_ENV_VAR: $($env:SECRET_${{config}}
+    MY_MAPPED_ENV_VAR: $($env:SECRET_${{ config }}

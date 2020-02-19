@@ -8,7 +8,6 @@ trigger:
 
 variables:
   config: dev
-  mySecret: SECRET_$(config)
 
 pool:
   vmImage: 'ubuntu-latest'

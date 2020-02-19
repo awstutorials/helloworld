@@ -6,6 +6,9 @@
 trigger:
 - master
 
+variables:
+  config: dev
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -16,5 +19,5 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    echo $env:TESTSECRET_$(TESTSECRET)_VAL
+    echo $env:SECRET_$(config)
   displayName: 'Run a multi-line script'

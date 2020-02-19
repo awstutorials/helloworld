@@ -8,6 +8,7 @@ trigger:
 
 variables:
   config: dev
+  mySecret: SECRET_$(config)
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -32,4 +33,4 @@ steps:
     # Using the mapped env var:
     Write-Host "This works: $env:MY_MAPPED_ENV_VAR"    # Recommended
   env:
-    MY_MAPPED_ENV_VAR: $(SECRET_$(config))
+    MY_MAPPED_ENV_VAR: $(mySecret)
